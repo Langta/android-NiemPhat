@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Niệm Danh Hiệu Phật"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <ImageView
+        android:id="@+id/img_menu"
+        android:padding="13dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_menu"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_marginTop="50dp"
+        android:layout_above="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteY="81dp">
+
+        <Button
+            android:id="@+id/btnPlay"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/play"
+            app:layout_constraintBottom_toTopOf="@+id/guideline2"
+            app:layout_constraintEnd_toStartOf="@+id/btnNext"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnPrev" />
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/previous"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlay"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/next"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPlay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnPlay" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="33dp" />
+
+        <TextView
+            android:id="@+id/textTimeCurrent"
+            android:layout_width="44dp"
+            android:layout_height="19dp"
+            android:text="00:00"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+            app:layout_constraintEnd_toStartOf="@+id/seekBar2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textTimeDuran"
+            android:layout_width="38dp"
+            android:layout_height="19dp"
+            android:text="00:00"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/seekBar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/seekBar2" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="0dp"
+            android:layout_height="19dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnPlay"
+            app:layout_constraintEnd_toStartOf="@+id/textTimeDuran"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textTimeCurrent" />
+
+        <ListView
+            android:id="@+id/listSoundView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnspeed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnspeed"
+            android:layout_width="53dp"
+            android:layout_height="39dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:text="x1"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.966"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:textSize="13sp"
+            android:id="@+id/btntimer"
+            android:layout_width="wrap_content"
+            android:layout_height="39dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/transparent"
+            android:text="Hẹn giờ"
+            app:layout_constraintBottom_toTopOf="@+id/textTimeCurrent"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="64dp"
+            android:alpha="0.5"
+            android:scaleType="centerCrop"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_menu"
+        android:layout_above="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:alpha="0.8"/>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ln_animation"
+            android:orientation="vertical"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_tuthien"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:text="Góp quỹ từ thiện Làng Ta"
+                android:fontFamily="sans-serif"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_antong"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:text="Góp quỹ ấn tống Kinh, Bảo Tháp, Sách"
+                android:fontFamily="sans-serif"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:id="@+id/tv_khuyenhoc"
+                android:gravity="left|center"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:text="Góp quỹ khuyến học Làng Ta"
+                android:fontFamily="sans-serif"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000"/>
+
+            <TextView
+                android:layout_marginTop="100dp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:text="Quý vị hoan hỉ vui lòng ghi rõ nội dung muốn đóng góp khi chuyển khoản"
+                android:fontFamily="sans-serif-medium"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-2247099407754019/5222671820">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
